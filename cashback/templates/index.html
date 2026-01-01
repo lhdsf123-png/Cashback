@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head><title>Sistema Cashback</title></head>
+<body>
+  <h2>Bem-vindo, {{ usuario }}</h2>
+
+  {% if dados[usuario]["tipo"] == "vendedor" %}
+    <h3>Registrar Compra</h3>
+    <form method="POST" action="/registrar_compra">
+      Cliente indicado: <input type="text" name="indicado"><br>
+      Valor da compra: <input type="number" step="0.01" name="valor"><br>
+      <button type="submit">Registrar</button>
+    </form>
+  {% endif %}
+
+  <h3>Saldos de Cashback</h3>
+  <ul>
+    {% for nome, info in dados.items() %}
+      <li>{{ nome }} - R${{ "%.2f"|format(info["cashback"]) }}</li>
+    {% endfor %}
+  </ul>
+</body>
+</html>
+
+
+  <h3>Seu saldo de Cashback</h3>
+  <p>R${{ "%.2f"|format(dados[usuario]["cashback"]) }}</p>
+</body>
+</html>%}
