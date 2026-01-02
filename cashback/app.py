@@ -5,7 +5,7 @@ app.secret_key = "segredo123"  # chave para sessão
 
 # Banco de dados em memória
 usuarios = {
-    "vendedor": {  # vendedor fixo
+    "Vendedor": {  # vendedor fixo
         "senha": "123",
         "tipo": "vendedor",
         "cashback": 0.0,
@@ -155,4 +155,5 @@ def registrar():
 
 
 if __name__ == "__main__":
+
     app.run(debug=True)
