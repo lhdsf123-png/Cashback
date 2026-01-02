@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head><title>Perfil</title></head>
+<body>
+  <h2>Perfil de {{ usuario }}</h2>
+
+  <h3>Saldo de Cashback</h3>
+  <p>R${{ "%.2f"|format(dados["cashback"]) }}</p>
+
+  <h3>Seus Indicados</h3>
+  {% if dados["indicados"] %}
+    <ul>
+      {% for indicado in dados["indicados"] %}
+        <li>{{ indicado }}</li>
+      {% endfor %}
+    </ul>
+  {% else %}
+    <p>Você ainda não indicou ninguém.</p>
+  {% endif %}
+
+  <h3>Histórico de Compras que geraram Cashback</h3>
+  {% if dados.get("historico") %}
+    <ul>
+      {% for compra in dados["historico"] %}
+        <li>{{ compra }}</li>
+      {% endfor %}
+    </ul>
+  {% else %}
+    <p>Nenhuma compra registrada ainda.</p>
+  {% endif %}
+
+  <a href="/">Voltar</a>
+</body>
+</html>
