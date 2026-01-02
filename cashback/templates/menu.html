@@ -19,6 +19,27 @@
             margin: 0;
             min-height: 100vh;
         }
+        /* Só no mobile: remove background e mostra imagem embaixo */
+    @media (max-width: 768px) {
+      body {
+        background-image: none; /* tira o fundo no celular */
+      }
+      .imagem-mobile {
+        display: block; /* mostra a imagem */
+        margin-top: 30px;
+        text-align: center;
+      }
+      .imagem-mobile img {
+        max-width: 100%;
+        height: auto;
+      }
+    }
+
+    /* No desktop a imagem extra fica escondida */
+    .imagem-mobile {
+      display: none;
+    }
+
 
         .card {
             width: 100%;
@@ -47,8 +68,13 @@
     <a href="/login" class="btn btn-light w-100 mb-3">Login</a>
 <a href="/cadastro" class="btn btn-light w-100">Cadastro</a>
 </div>
+<!-- Imagem que só aparece no mobile -->
+  <div class="imagem-mobile">
+    <img src="/static/ferramentas.png" alt="Ferramentas">
+  </div>
 
 </body>
 
 </html>
+
 
