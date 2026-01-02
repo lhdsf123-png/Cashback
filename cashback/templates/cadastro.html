@@ -12,47 +12,57 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            height: 100vh;
+            min-height: 100vh;
+            margin: 0;
+            background-image: url("/static/ferramentas.png");
+            background-size: contain;
+            background-position: top center;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
         }
+
         .card {
             width: 100%;
-            max-width: 380px; /* largura típica de tela de celular */
+            max-width: 380px; /* largura típica de celular */
             border-radius: 16px;
         }
-        .btn {
-            border-radius: 50px; /* botões arredondados estilo Android */
+
+        /* Botões pretos iguais ao login */
+        .btn-black {
+            background-color: black;   /* fundo preto */
+            color: white;              /* texto branco */
+            border: 2px solid black;   /* moldura preta */
+            border-radius: 50px;       /* arredondado */
             font-size: 1.1rem;
             padding: 12px;
         }
+
+        .btn-black:hover {
+            background-color: #333;    /* preto mais claro */
+            color: white;
+        }
+
         .form-control {
             border-radius: 12px;
             padding: 12px;
             font-size: 1rem;
         }
-        body {
-            background-image: url("/static/ferramentas.png");
-            background-size: cover;
-            background-position: center;
-            background-repeat: no-repeat;
-            background-attachment: fixed;
-            margin: 0;
-            min-height: 100vh;
-        }
-         /* Título Login em preto */
-         .card-header {
-           background-color: white;   /* fundo branco */
-          border: 2px solid black;   /* moldura preta */
-         }
 
-       .card-header h3 {
-          color: black;              /* texto preto */
-          font-weight: bold;
-       }
+        /* Cabeçalho igual ao login */
+        .card-header {
+            background-color: white;   /* fundo branco */
+            border: 2px solid black;   /* moldura preta */
+        }
+
+        .card-header h3 {
+            color: black;              /* texto preto */
+            font-weight: bold;
+        }
     </style>
 </head>
 <body>
 <div class="card shadow-lg">
-    <div class="card-header bg-success text-white text-center">
+    <div class="card-header text-center">
         <h3>Cadastro</h3>
     </div>
     <div class="card-body">
@@ -67,15 +77,14 @@
                 <input type="password" id="senha" name="senha" class="form-control" required>
             </div>
 
-             <button type="submit" class="btn btn-black w-100">Cadastrar</button>
+            <button type="submit" class="btn btn-black w-100">Cadastrar</button>
         </form>
     </div>
     <div class="card-footer text-center">
-        <a href="/cadastro" class="btn btn-black w-100 mt-2">Já tem conta? Entrar</a>
+        <a href="/login" class="btn btn-black w-100 mt-2">Já tem conta? Entrar</a>
     </div>
 </div>
 </body>
-
 </html>
 
 
